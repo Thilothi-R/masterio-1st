@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Admin login form</title>
+  <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/log/style5.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<form action="/adminlogin" method="POST" class="login">
+  {% csrf_token %}
+  <center>Admin Login</center>
+  <input type="text" name="Username" placeholder="Username" required>
+  <input type="password" name="password" placeholder="password" required>
+  <h3 style="color: brown;">{{msg}}</h3>
+  <button type="submit">Login</button><br>
+
+<div class="form-group">
+  <a href="{% url 'adminregi' %}"><h3 style="color: brown;">Sign Up</h3></a>
+</div>
+</form>
+  
+
+<a href="https://codepen.io/davinci/" target="_blank"></a>
+<!-- partial -->
+  
+</body>
+</html>

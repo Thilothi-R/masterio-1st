@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/log/style1.css' %}">
+  <title>Materio</title>
+</head>
+<body>
+  <section>
+    <div class="box">
+      <div class="form">
+        <center> <h1>Welcome !!</h1>   
+          <h2>Instructor Register</h2>
+      <form action="/insupdate/{{ex3.id}}" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        <div class="inputBx">
+          <input type="text" name="Username" value="{{ex3.Username}}" placeholder="Username" required>
+        </div><br>
+        <div class="inputBx">
+          <input type="text" name="First_name" value="{{ex3.First_name}}" placeholder="First_name" required>
+        </div><br>
+        <div class="inputBx">
+          <input type="text" name="Last_name" value="{{ex3.Last_name}}" placeholder="Last_name" required>
+         
+
+        </div><br>
+        <div class="inputBx">
+          <input type="text"name="Mail_id"value="{{ex3.Mail_id}}" placeholder="Mail_id" required>
+          
+
+        </div><br>
+        <div class="inputBx">
+          <input type="text" name="password"value="{{ex3.password}}" placeholder="password" required>
+          
+
+        </div><br>
+        
+       <div class="inputBx">
+          <p><button type="submit">Update</button> </p>  
+
+        </div>
+      </form><br><br>
+      
+     
+    </center> 
+    </div>
+
+    </div>
+  </section>
+</body>
+</html>

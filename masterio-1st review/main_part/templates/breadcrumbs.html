@@ -1,0 +1,435 @@
+{% load static %}
+      <!-- <! nav bars > -->
+      <!doctype html>
+<html lang="en">
+  <head>
+  	<title>Masterio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{% static 'css1/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css2/style.css' %}">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-4">
+		  		<a href="{% url '/' %}" class="img logo rounded-circle mb-5" style="background-image: url('{% static 'images/logoo.jpg' %}');"></a>
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active">
+              <li>
+                <a href="{% url 'adminregi' %}"> <h1 class="btn btn-warning">admin dashboard</h1></a>
+              </li>
+	          
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="{% url 'index3' %}"><span class="fa fa-dashboard" aria-hidden="true"></span>Dashboard </a>
+          </li>
+         
+          <li >
+            
+              <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
+                <i class="fa fa-users " aria-hidden="true"></i>
+                <span class="menu-title">user management</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="page-layouts">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="{% url 'layout' %}">*Admin</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="{% url 'layout' %}">*Instructor</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="{% url 'horizontal' %}">*Students</a></li>
+                  
+                </ul>
+              </div>
+          </li>
+         
+          <li>
+            <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
+              <i class="fa fa-book" aria-hidden="true"></i>
+              <span class="menu-title">courses</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="sidebar-layouts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'compact' %}">*Categories</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'sidebar' %}">*All Courses</a></li>
+               
+               
+
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="{% url 'dragula' %}"><span class="fa fa-briefcase" aria-hidden="true"></span>instructor package </a>
+          </li>
+         
+         
+	        </ul>
+
+	       
+
+	      </div>
+    	</nav>
+      
+
+        <!-- Page Content  -->
+      <div id="content" class="p-3 p-md-2">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item nav-search d-none d-md-flex">
+                  <div class="nav-link">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="fa fa-search"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item d-none d-lg-flex">
+                  <a class="nav-link" href="#">
+                    <span class="btn btn-primary">+ Create new</span>
+                  </a>
+                </li>
+                <li class="nav-item dropdown d-none d-lg-flex">
+                  <div class="nav-link">
+                    <span class="dropdown-toggle btn btn-outline-dark" id="languageDropdown" data-toggle="dropdown">English</span>
+                    <div class="dropdown-menu navbar-dropdown" aria-labelledby="languageDropdown">
+                      <a class="dropdown-item font-weight-medium" href="#">
+                        French
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item font-weight-medium" href="#">
+                        Espanol
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item font-weight-medium" href="#">
+                        Latin
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item font-weight-medium" href="#">
+                        Arabic
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                    <i class="fa fa-bell mx-0"></i>
+                    <span class="count">16</span>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                    <a class="dropdown-item">
+                      <p class="mb-0 font-weight-normal float-left">You have 16 new notifications
+                      </p>
+                      <span class="badge badge-pill badge-warning float-right">View all</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item preview-item">
+                      <div class="preview-thumbnail">
+                        <div class="preview-icon bg-danger">
+                          <i class="fa fa-exclamation-circle mx-0"></i>
+                        </div>
+                      </div>
+                      <div class="preview-item-content">
+                        <h6 class="preview-subject font-weight-medium">Application Error</h6>
+                        <p class="font-weight-light small-text">
+                          Just now
+                        </p>
+                      </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item preview-item">
+                      <div class="preview-thumbnail">
+                        <div class="preview-icon bg-warning">
+                          <i class="fa fa-wrench mx-0"></i>
+                        </div>
+                      </div>
+                      <div class="preview-item-content">
+                        <h6 class="preview-subject font-weight-medium">Settings</h6>
+                        <p class="font-weight-light small-text">
+                          Private message
+                        </p>
+                      </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item preview-item">
+                      <div class="preview-thumbnail">
+                        <div class="preview-icon bg-info">
+                          <i class="fa fa-envelope mx-0"></i>
+                        </div>
+                      </div>
+                      <div class="preview-item-content">
+                        <h6 class="preview-subject font-weight-medium">New user registration</h6>
+                        <p class="font-weight-light small-text">
+                          2 days ago
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-envelope mx-0"></i>
+                    <span class="count">25</span>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+                    <div class="dropdown-item">
+                      <p class="mb-0 font-weight-normal float-left">You have 7 unread mails
+                      </p>
+                      <span class="badge badge-info badge-pill float-right">View all</span>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item preview-item">
+                      <div class="preview-thumbnail">
+                          <img src="{% static 'images/faces/face4.jpg' %}" alt="image" class="profile-pic">
+                      </div>
+                      <div class="preview-item-content flex-grow">
+                        <h6 class="preview-subject ellipsis font-weight-medium">David Grey
+                          
+                        </h6>
+                        <p class="font-weight-light small-text">
+                          The meeting is cancelled
+                        </p>
+                      </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item preview-item">
+                      <div class="preview-thumbnail">
+                          <img src="{% static 'images/faces/face2.jpg' %}" alt="image" class="profile-pic">
+                      </div>
+                      <div class="preview-item-content flex-grow">
+                        <h6 class="preview-subject ellipsis font-weight-medium">Tim Cook
+                          
+                        </h6>
+                        <p class="font-weight-light small-text">
+                          New product launch
+                        </p>
+                      </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item preview-item">
+                      <div class="preview-thumbnail">
+                          <img src="{% static 'images/faces/face3.jpg' %}" alt="image" class="profile-pic">
+                      </div>
+                      <div class="preview-item-content flex-grow">
+                        <h6 class="preview-subject ellipsis font-weight-medium"> Johnson
+                          
+                        </h6>
+                        <p class="font-weight-light small-text">
+                          Upcoming board meeting
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <li class="nav-item nav-profile dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                  
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                    <a class="dropdown-item">
+                      <i class="fa fa-cog text-primary"></i>
+                      Settings
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="{% url '/' %}" class="dropdown-item">
+                      <i class="fa fa-power-off text-primary"></i>
+                     Logout 
+                    </a>
+                  </div>
+                </li>
+                <li class="nav-item nav-settings d-none d-lg-block">
+                  <a class="nav-link" href="#">
+                    <i class="fa fa-ellipsis-h"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+<!-- Page Content  -->
+<div id="content" class="p-4 p-md-5 pt-5">
+  <div class="main-panel">
+    <div class="content-wrapper">
+
+      <div class="row">
+        <div class="col-12 grid-margin">
+      
+        <div class="card">
+          <div class="card-body">
+
+            <div class="page-header">
+              <h3 class="page-title">
+                User Update
+                <nav aria-label="breadcrumb">
+                  
+                      <a class="nav-link" href="{% url 'blank' %}">
+                        <span class="btn btn-primary">+ Show all user</span>
+                      </a>
+                   
+                 
+                </nav>
+              </h3>
+              
+            </div>
+            <div class="container">
+              <form action="/breadcrumbsreg" method="POST" class="signin-form">
+                {% csrf_token %}
+                <div class="form-group">
+                  <p>Name<i class="fa fa-asterisk text-primary"></i></p>
+                  <input type="text" class="form-control"  name="Name" placeholder="Name" class="fa fa-asterisk text-primary" required>
+                </div>
+                <div class="form-group">
+                  <p>E-Mail Address<i class="fa fa-asterisk text-primary"></i></p>
+                  <input type="text" class="form-control" name="E_Mail" placeholder="E_Mail" required>
+                </div>
+                <div class="form-group">
+                  <p>Password<i class="fa fa-asterisk text-primary"></i></p>
+                  <input id="password-field" type="password" class="form-control" name="password" placeholder="password" required>
+                  <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                </div>
+                <button  type="submit" class="btn btn-primary">Update</button>
+
+              </form>
+              
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+ 
+</div>
+
+
+
+</div>
+
+
+
+
+       
+      </div>
+    </div>
+
+   
+
+       
+    <script src="{% static 'js1/jquery.min.js' %}"></script>
+    <script src="{% static 'js1/popper.js' %}"></script>
+    <script src="{% static 'js1/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js1/main.js' %}"></script>
+  </body>
+</html>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
